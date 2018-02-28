@@ -1,0 +1,36 @@
+
+import numpy as np
+def sigmoid(z):
+    """The sigmoid function."""
+    return 1.0/(1.0+np.exp(-z))
+..................
+L1
+
+import numpy as np
+def L1(yHat, y):
+    return np.sum(np.absolute(yHat - y))
+.........................
+L2
+
+import numpy as np
+def L2(yHat, y):
+    return np.sum((yHat - y)**2)
+
+
+
+.....................................................................
+
+					
+import numpy as np
+from sklearn.preprocessing import normalize
+matrix = numpy.arange(0,27,3).reshape(3,3).astype(numpy.float64)
+
+#array([[  0.,   3.,   6.],
+#   [  9.,  12.,  15.],
+#   [ 18.,  21.,  24.]])
+
+normed_matrix = normalize(matrix, axis=1, norm='l1')
+#[[ 0.          0.33333333  0.66666667]
+#[ 0.25        0.33333333  0.41666667]
+#[ 0.28571429  0.33333333  0.38095238]]
+
